@@ -1,4 +1,4 @@
-package com.webo.app.twowheelerloan.loanprocess.main.Controller;
+package com.webo.app.twowheelerloan.loanprocess.main.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.webo.app.twowheelerloan.loanprocess.main.Service.HomeServiceCustomerDetails;
 import com.webo.app.twowheelerloan.loanprocess.main.model.CustomerDetails;
+import com.webo.app.twowheelerloan.loanprocess.main.service.HomeServiceCustomerDetails;
+
+
 
 @RestController
 public class HomeControllerCustomerDetails {

@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.webo.app.twowheelerloan.loanprocess.main.model.CustomerDetails;
 import com.webo.app.twowheelerloan.loanprocess.main.service.HomeServiceCustomerDetails;
+
+import antlr.collections.List;
 
 
 
@@ -17,6 +20,19 @@ public class HomeControllerCustomerDetails {
 	
 	@Autowired
 	HomeServiceCustomerDetails cds;
+	
+	@Autowired
+	RestTemplate rstemp;
+	
+	@RequestMapping("/getmasterdata")
+	public List logindata()
+	{
+		String url="http://localhost:8083/customerbank";
+		List list=rstemp.getForObject(url, List.class);
+		return list;
+		
+	}
+	
 	
 	
 	@RequestMapping(value = "/savecustomerdetails", method = RequestMethod.POST)
